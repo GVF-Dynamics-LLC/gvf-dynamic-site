@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GVF Dynamics | Hardware Silicon IP & Deterministic AI Orchestration</title>
+    <meta name="description" content="GVF Dynamics produces physical-layer dynamic bitline activation silicon IP and deterministic multi-agent execution middleware for Edge AI & CIM architectures.">
+    <style>
+        :root {
+            --bg-color: #0B0F19;
+            --card-bg: #111827;
+            --card-border: #1F2937;
+            --accent-color: #3B82F6;
+            --accent-cyan: #06B6D4;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --text-main: #F9FAFB;
+            --text-muted: #9CA3AF;
+            --success-color: #10B981;
+            --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding: 0 1.5rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .header-badges {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge-cyan {
+            background-color: rgba(6, 182, 212, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            flex: 1;
+            padding: 4rem 0;
+        }
+
+        .hero {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 5rem auto;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .phase-num {
+            font-family: monospace;
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .table-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow-x: auto;
+            margin-bottom: 5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.02);
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight {
+            color: var(--success-color);
+            font-weight: 700;
+        }
+
+        .cta-box {
+            background: linear-gradient(180deg, var(--card-bg) 0%, rgba(17, 24, 39, 0.5) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .cta-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            font-weight: 600;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #2563EB;
+        }
+
+        .btn-cyan {
+            background-color: var(--accent-cyan);
+            color: #0B0F19;
+        }
+
+        .btn-cyan:hover {
+            background-color: #0891B2;
+        }
+
+        footer {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 2rem 0;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">GVF <span>Dynamics</span></div>
+        <div class="header-badges">
+            <div class="badge">Silicon IP</div>
+            <div class="badge badge-cyan">Middleware Engine</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Hardware Silicon IP & Deterministic AI Orchestration</h1>
+            <p>Bridging physical-layer Compute-In-Memory (CIM) bitline acceleration with a 4-phase transactional multi-agent software runtime.</p>
+        </section>
+
+        <!-- HARDWARE SECTION -->
+        <div class="section-title">
+            <h2>Hardware Architecture: Bitline Activation Cores</h2>
+            <p>Patent-pending silicon IP engineered directly into SRAM macros.</p>
+        </div>
+
+        <section class="grid">
+            <div class="card">
+                <h3>Bitline Comparator Core</h3>
+                <p>Evaluates signal energy against a temporally modulated carrier wave threshold ($V_{\text{th}}(t)$) before execution, suppressing zero-value compute at the physical bitline.</p>
+            </div>
+            <div class="card">
+                <h3>Hardware Cyber-Breaker</h3>
+                <p>Integrated Pillar 3 entropy monitoring automatically trip-gates the system clock during adversarial noise or spike-storm flood attacks, ensuring physical silicon safety.</p>
+            </div>
+            <div class="card">
+                <h3>Safe Decision Region</h3>
+                <p>Hardcoded $\epsilon$ safe decision region prevents false-negative clock gating under analog noise and PVT (process, voltage, temperature) circuit variations.</p>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">
+                <h2>Empirical Benchmark Evaluation</h2>
+                <p>Measured dynamic compute reduction on physical neuromorphic datasets and event streams.</p>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Workload / Dataset</th>
+                            <th>Data Architecture</th>
+                            <th>Dynamic Compute Reduction</th>
+                            <th>Architectural Effect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>DVS Gesture Streams</strong></td>
+                            <td>Spatiotemporal Sparse Stream</td>
+                            <td class="highlight">70.60% MACs Avoided</td>
+                            <td>High-efficiency event-driven sparse vision gating</td>
+                        </tr>
+                        <tr>
+                            <td><strong>N-MNIST Dataset</strong></td>
+                            <td>Physical Neuromorphic Events</td>
+                            <td class="highlight">15.56% MACs Avoided</td>
+                            <td>Continuous motion digit recognition pruning</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Adversarial Noise Flood</strong></td>
+                            <td>Spike-Storm Cyber Attack</td>
+                            <td class="highlight">100.00% Clock Suppression</td>
+                            <td>Physical $H(x)$ hardware breaker activation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SOFTWARE MIDDLEWARE SECTION -->
+        <div class="section-title" id="orchestrator">
+            <h2>Software Layer: GVF Orchestrator Core</h2>
+            <p>4-Phase deterministic pipeline engine for multi-agent workflows and tool sandboxing.</p>
+        </div>
+
+        <section class="grid">
+            <div class="card">
+                <div class="phase-num">Phase 01</div>
+                <h3>DAG Dependency Sorting</h3>
+                <p>Evaluates execution graphs using Kahn's Algorithm to enforce topological dependencies and prevent circular execution loops.</p>
+            </div>
+            <div class="card">
+                <div class="phase-num">Phase 02</div>
+                <h3>SemVer Tool Namespacing</h3>
+                <p>Resolves skill collisions across agent modules while enforcing strict Semantic Versioning API contracts.</p>
+            </div>
+            <div class="card">
+                <div class="phase-num">Phase 03</div>
+                <h3>Deterministic Prompt Synthesis</h3>
+                <p>SHA-256 state deduplication and dynamic slot pruning to strictly enforce token budget constraints.</p>
+            </div>
+            <div class="card">
+                <div class="phase-num">Phase 04</div>
+                <h3>Transactional Sandboxing</h3>
+                <p>Dry-run tool execution paired with JSON Schema validation that triggers automatic state rollbacks on failure.</p>
+            </div>
+        </section>
+
+        <!-- POLAR DISTRIBUTION CTA -->
+        <section class="cta-box">
+            <h3>Get GVF Orchestrator (.whl)</h3>
+            <p>Purchase a commercial license on Polar.sh for instant access to pre-compiled Python distribution packages and hardware-software integration specs.</p>
+            <div class="cta-buttons">
+                <!-- LINKED TO POLAR -->
+                <a href="https://buy.polar.sh/polar_cl_l1cFQWqpkNGthV5Go6M5tt22iySoiEGNAGxpJ09rh6F" target="_blank" rel="noopener noreferrer" class="btn btn-cyan">Purchase License on Polar.sh</a>
+                <a href="mailto:agonzalez@gvfdynamics.com" class="btn">Request IP Package & NDA</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GVF Dynamics, LLC. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; opacity: 0.75;">GVF Dynamics, LLC is a wholly owned hardware research subsidiary of TCPARTSDIRECT, LLC.</p>
+    </footer>
+
+</body>
+</html>
