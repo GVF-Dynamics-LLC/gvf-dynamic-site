@@ -11,12 +11,15 @@ def update_gvf_website():
 <!-- GVF DYNAMICS FOOTER -->
 <footer style="background-color: #030712; color: #94a3b8; padding: 40px 20px; border-top: 1px solid #1e293b; font-family: sans-serif; text-align: center;">
   <div style="max-width: 1100px; margin: 0 auto;">
-    <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 15px;">
+    <div style="margin-bottom: 16px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; font-size: 15px;">
       <a href="https://gvfdynamics.com/privacy.html" style="color: #38bdf8; text-decoration: none; font-weight: 500;">Privacy Policy</a>
       <a href="https://gvfdynamics.com/terms.html" style="color: #38bdf8; text-decoration: none; font-weight: 500;">Terms of Service</a>
       <a href="https://github.com/GVF-Dynamics-LLC/GVF-Engine-Sim" target="_blank" style="color: #38bdf8; text-decoration: none; font-weight: 500;">GitHub Open Core</a>
       <a href="https://polar.sh/gvfdynamics" target="_blank" style="color: #38bdf8; text-decoration: none; font-weight: 500;">Enterprise SDK (Polar)</a>
       <a href="https://www.youtube.com/@GVFDynamics" target="_blank" style="color: #38bdf8; text-decoration: none; font-weight: 500;">YouTube Channel</a>
+    </div>
+    <div style="margin-bottom: 16px; font-size: 14px; color: #38bdf8;">
+      Contact: <a href="mailto:contact@gvfdynamics.com" style="color: #38bdf8; text-decoration: underline;">contact@gvfdynamics.com</a>
     </div>
     <p style="font-size: 14px; color: #64748b; margin: 0;">
       © 2026 GVF Dynamics LLC. All rights reserved. | Hardware-Enforced AI Governance Microarchitecture
@@ -30,15 +33,12 @@ def update_gvf_website():
     index_path = repo_dir / "index.html"
     if index_path.exists():
         content = index_path.read_text(encoding="utf-8")
-        if "<!-- GVF DYNAMICS FOOTER -->" not in content:
-            if "</body>" in content:
-                content = content.replace("</body>", footer_html)
-            else:
-                content += footer_html
-            index_path.write_text(content, encoding="utf-8")
-            print("[SUCCESS] Appended footer links to index.html")
-        else:
-            print("[NOTICE] Footer links already exist in index.html")
+        if "<!-- GVF DYNAMICS FOOTER -->" in content:
+            content = content.split("<!-- GVF DYNAMICS FOOTER -->")[0] + "</body>"
+        
+        content = content.replace("</body>", footer_html)
+        index_path.write_text(content, encoding="utf-8")
+        print("[SUCCESS] Appended updated footer links & contact email to index.html")
 
     # 3. Create/Update terms.html
     terms_html = """<!DOCTYPE html>
@@ -68,13 +68,13 @@ def update_gvf_website():
   <p>Commercial deployment, hardware integration, or enterprise SDK access requires a valid license tier issued via our official storefront at <a href="https://polar.sh/gvfdynamics" target="_blank">polar.sh/gvfdynamics</a>.</p>
 
   <h2>4. Contact</h2>
-  <p>For inquiries regarding licensing or terms, please contact us via our official support channels at <a href="https://gvfdynamics.com">gvfdynamics.com</a>.</p>
+  <p>For inquiries regarding licensing or terms, please contact us directly at <a href="mailto:contact@gvfdynamics.com">contact@gvfdynamics.com</a>.</p>
 </body>
 </html>
 """
     terms_path = repo_dir / "terms.html"
     terms_path.write_text(terms_html, encoding="utf-8")
-    print("[SUCCESS] Created terms.html")
+    print("[SUCCESS] Updated terms.html with contact email")
 
     # 4. Create/Update privacy.html
     privacy_html = """<!DOCTYPE html>
@@ -101,19 +101,19 @@ def update_gvf_website():
   <p>License management and payment processing are securely handled by Polar (<a href="https://polar.sh/gvfdynamics" target="_blank">polar.sh</a>).</p>
 
   <h2>3. Contact</h2>
-  <p>For privacy inquiries, reach us directly via <a href="https://gvfdynamics.com">gvfdynamics.com</a>.</p>
+  <p>For privacy inquiries, reach us directly at <a href="mailto:contact@gvfdynamics.com">contact@gvfdynamics.com</a>.</p>
 </body>
 </html>
 """
     privacy_path = repo_dir / "privacy.html"
     privacy_path.write_text(privacy_html, encoding="utf-8")
-    print("[SUCCESS] Updated privacy.html")
+    print("[SUCCESS] Updated privacy.html with contact email")
 
     # 5. Execute Git Commands Automatically
     print("\n[GIT AUTOMATION] Staging, committing, and pushing to GitHub Pages...")
     try:
         subprocess.run(["git", "add", "."], check=True)
-        subprocess.run(["git", "commit", "-m", "feat: update site footer links, terms.html, and privacy.html"], check=True)
+        subprocess.run(["git", "commit", "-m", "feat: add contact email and fix footer links"], check=True)
         subprocess.run(["git", "push", "origin", "main"], check=True)
         print("\n[LIVE DEPLOYMENT SUCCESS] Your website changes have been pushed to GitHub Pages!")
     except subprocess.CalledProcessError as e:
