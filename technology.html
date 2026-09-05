@@ -15,6 +15,7 @@
         .metric-card h3 { margin-top: 0; color: #58a6ff; }
         ul li { margin-bottom: 8px; }
         strong { color: #ffffff; }
+        code { background-color: #161b22; padding: 2px 6px; border-radius: 4px; border: 1px solid #30363d; color: #79c0ff; font-family: monospace; }
     </style>
 </head>
 <body>
@@ -34,15 +35,16 @@
         <div class="metric-card">
             <h3>Verified Pre-Silicon Metrics (10M CRV Baseline)</h3>
             <ul>
-                <li><strong>Dynamic SRAM Read Suppression:</strong> 56.17% exact traffic reduction under randomized sparsity</li>
-                <li><strong>Flop Toggle Suppression:</strong> 263,566 register toggles suppressed on integrated counter</li>
-                <li><strong>Fault Recovery:</strong> &lt;1-cycle state machine recovery across 19 async resets</li>
+                <li><strong>Dynamic SRAM Read Suppression:</strong> 56.17% exact traffic reduction under randomized activation sparsity</li>
+                <li><strong>Flop Toggle Suppression:</strong> 263,566 register toggles suppressed on integrated hardware counter</li>
+                <li><strong>Fault Recovery:</strong> &lt;1-cycle state machine recovery across 19 randomized async resets</li>
                 <li><strong>IP Protection:</strong> USPTO Provisional Patent Application No. 64/134,522</li>
             </ul>
         </div>
         
-        <h3>Target Deliverables</h3>
-        <p>Delivered as target-agnostic, pure synthesizable SystemVerilog (gvf_core_top.sv) ready for FPGA emulation or ASIC synthesis under standard Technical Evaluation Agreements (TEAs).</p>
+        <h3>Target Deliverables & EDA Toolchain Support</h3>
+        <p>For evaluation partners, GVF Dynamics provides zero-trust, secure evaluation packages. Primary RTL is delivered as an <strong>IEEE 1800-compliant encrypted SystemVerilog macro (<code>gvf_core_top.sv.p</code>)</strong> alongside cleartext testbenches (<code>gvf_core_tb.sv</code>), GTKWave telemetry profiles, and synthesis scripts.</p>
+        <p>Pre-compiled for seamless elaboration, cycle-accurate simulation, and gate-level synthesis in standard EDA toolchains including Synopsys Design Compiler, Cadence Genus, AMD/Xilinx Vivado, and Siemens QuestaSim under standard Technical Evaluation Agreements (TEAs).</p>
     </main>
     <footer>
         <p>&copy; 2026 GVF Dynamics, LLC. All rights reserved.</p>
