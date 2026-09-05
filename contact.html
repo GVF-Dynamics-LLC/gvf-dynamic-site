@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | GVF Dynamics</title>
     <style>
-        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 850px; margin: 0 auto; padding: 25px; color: #222; }
-        header, footer { border-bottom: 1px solid #e0e0e0; padding-bottom: 15px; margin-bottom: 25px; }
-        nav a { margin-right: 18px; color: #0052cc; text-decoration: none; font-weight: 600; }
-        nav a:hover { text-decoration: underline; }
-        form { background: #f8f9fa; padding: 25px; border: 1px solid #e0e0e0; margin-top: 20px; border-radius: 6px; }
-        label { display: block; margin-top: 12px; font-weight: 600; }
-        input, select, textarea { width: 100%; padding: 10px; margin-top: 6px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
-        button { margin-top: 18px; padding: 12px 24px; background: #0052cc; color: #fff; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; }
-        button:hover { background: #0040a8; }
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 850px; margin: 0 auto; padding: 25px; color: #e6edf3; background-color: #0d1117; }
+        header, footer { border-bottom: 1px solid #30363d; padding-bottom: 15px; margin-bottom: 25px; }
+        footer { border-top: 1px solid #30363d; border-bottom: none; margin-top: 40px; padding-top: 20px; color: #8b949e; }
+        nav a { margin-right: 18px; color: #58a6ff; text-decoration: none; font-weight: 600; }
+        nav a:hover { text-decoration: underline; color: #79c0ff; }
+        h1, h2, h3 { color: #ffffff; }
+        form { background: #161b22; padding: 25px; border: 1px solid #30363d; margin-top: 20px; border-radius: 6px; }
+        label { display: block; margin-top: 15px; font-weight: 600; color: #c9d1d9; }
+        input, select, textarea { width: 100%; padding: 10px; margin-top: 6px; box-sizing: border-box; background-color: #0d1117; border: 1px solid #30363d; color: #e6edf3; border-radius: 4px; }
+        input:focus, select:focus, textarea:focus { border-color: #58a6ff; outline: none; }
+        button { margin-top: 20px; padding: 12px 24px; background: #238636; color: #ffffff; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; }
+        button:hover { background: #2ea043; }
+        strong { color: #58a6ff; }
     </style>
 </head>
 <body>
@@ -33,13 +37,13 @@
         
         <form action="mailto:agonzalez@gvfdynamics.com" method="post" enctype="text/plain">
             <label for="name">Full Name *</label>
-            <input type="text" id="name" name="Name" required>
+            <input type="text" id="name" name="Name" required placeholder="Jane Doe">
             
             <label for="email">Work Email *</label>
-            <input type="email" id="email" name="Work Email" required>
+            <input type="email" id="email" name="Work Email" required placeholder="j.doe@company.com">
             
             <label for="company">Company / Organization *</label>
-            <input type="text" id="company" name="Company" required>
+            <input type="text" id="company" name="Company" required placeholder="Organization name">
             
             <label for="role">Role *</label>
             <select id="role" name="Role">
