@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology | GVF Dynamics</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 850px; margin: 0 auto; padding: 25px; color: #222; }
+        header, footer { border-bottom: 1px solid #e0e0e0; padding-bottom: 15px; margin-bottom: 25px; }
+        nav a { margin-right: 18px; color: #0052cc; text-decoration: none; font-weight: 600; }
+        nav a:hover { text-decoration: underline; }
+        .metric-card { background: #f8f9fa; border-left: 4px solid #0052cc; padding: 18px; margin: 20px 0; border-radius: 0 6px 6px 0; }
+        .metric-card h3 { margin-top: 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>GVF Dynamics, LLC</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="technology.html">Technology</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Advanced Hardware Governance for AI/ML Accelerators</h1>
+        <p>The <strong>GVF Engine™</strong> is a synthesizable hardware governance block designed to sit directly at the SRAM sensing boundary. By employing proprietary V_th(t) AC thresholding, the core evaluates activation magnitudes in real time within a single clock phase to execute sub-cycle bitline gating.</p>
+        
+        <div class="metric-card">
+            <h3>Verified Pre-Silicon Metrics (10M CRV Baseline)</h3>
+            <ul>
+                <li><strong>Dynamic SRAM Read Suppression:</strong> 56.17% exact traffic reduction under randomized sparsity</li>
+                <li><strong>Flop Toggle Suppression:</strong> 263,566 register toggles suppressed on integrated counter</li>
+                <li><strong>Fault Recovery:</strong> &lt;1-cycle state machine recovery across 19 async resets</li>
+                <li><strong>IP Protection:</strong> USPTO Provisional Patent Application No. 64/134,522</li>
+            </ul>
+        </div>
+        
+        <h3>Target Deliverables</h3>
+        <p>Delivered as target-agnostic, pure synthesizable SystemVerilog (gvf_core_top.sv) ready for FPGA emulation or ASIC synthesis under standard Technical Evaluation Agreements (TEAs).</p>
+    </main>
+    <footer>
+        <p>&copy; 2026 GVF Dynamics, LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>

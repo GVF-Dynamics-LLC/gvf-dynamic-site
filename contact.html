@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | GVF Dynamics</title>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; max-width: 850px; margin: 0 auto; padding: 25px; color: #222; }
+        header, footer { border-bottom: 1px solid #e0e0e0; padding-bottom: 15px; margin-bottom: 25px; }
+        nav a { margin-right: 18px; color: #0052cc; text-decoration: none; font-weight: 600; }
+        nav a:hover { text-decoration: underline; }
+        form { background: #f8f9fa; padding: 25px; border: 1px solid #e0e0e0; margin-top: 20px; border-radius: 6px; }
+        label { display: block; margin-top: 12px; font-weight: 600; }
+        input, select, textarea { width: 100%; padding: 10px; margin-top: 6px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        button { margin-top: 18px; padding: 12px 24px; background: #0052cc; color: #fff; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; }
+        button:hover { background: #0040a8; }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>GVF Dynamics, LLC</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="technology.html">Technology</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Technical Evaluation Requests</h1>
+        <p>Direct Inquiries: <strong>agonzalez@gvfdynamics.com</strong></p>
+        <p>We work with SoC architects, NPU teams, and strategic partners under standard Technical Evaluation Agreements (TEAs) to provide cycle-accurate models and synthesizable RTL.</p>
+        
+        <form action="mailto:agonzalez@gvfdynamics.com" method="post" enctype="text/plain">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="Name" required>
+            
+            <label for="email">Work Email *</label>
+            <input type="email" id="email" name="Work Email" required>
+            
+            <label for="company">Company / Organization *</label>
+            <input type="text" id="company" name="Company" required>
+            
+            <label for="role">Role *</label>
+            <select id="role" name="Role">
+                <option>Director / VP of Silicon Architecture</option>
+                <option>Lead Hardware / NPU Architect</option>
+                <option>Senior Design Verification Engineer</option>
+                <option>Investor / Strategic Partner</option>
+                <option>Potential Technical Advisor</option>
+            </select>
+            
+            <label for="message">Message / Evaluation Requirements</label>
+            <textarea id="message" name="Message" rows="5" placeholder="Specify your bus widths, target process nodes, or evaluation timeline..."></textarea>
+            
+            <button type="submit">Submit Technical Request</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2026 GVF Dynamics, LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>
